@@ -28,6 +28,9 @@ export default function Navbar() {
 
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
+              <Link href="/user_image" className="text-white hover:text-yellow-400 transition-colors">
+                VISION
+              </Link>
               <Link href="/products" className="text-white hover:text-yellow-400 transition-colors">
                 PRODUCTS
               </Link>
