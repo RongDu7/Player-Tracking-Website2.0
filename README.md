@@ -6,6 +6,7 @@ Built using cutting-edge web technologies and machine learning, **Project Orion*
 
 ## Key Features
 
+
 | Feature                      | Description                                                                                     |
 |-----------------------------|-------------------------------------------------------------------------------------------------|
 | Real-Time Performance Insights | Analyze video and motion data in real time to deliver precise, personalized training recommendations. |
@@ -17,7 +18,6 @@ Built using cutting-edge web technologies and machine learning, **Project Orion*
 | Star Rating & Feedback      | Collects user feedback and ratings to help improve the platform.                                |
 | SignIn/SignUp      | Firebase Authentication for secure sign-in with email/password.              |
  
-
 ##  Screenshots
 
 Below are some visuals showcasing various sections of the platform:
@@ -44,17 +44,17 @@ Below are some visuals showcasing various sections of the platform:
 - **Feedback**: Feedback and rating section to improve platform usability.
   ![Feedback](public/images/Feedback.png)
 
-- **Login**: Secure login interface for platform access.
-  ![Login](public/images/Login.png)
+- **SignIn**: Secure login interface for platform access.
+  ![SignIn](public/images/SignIn.png)
 
 - **Signup**: User registration interface for creating an account.
-  ![Signup](public/images/Signup.png)
+  ![Signup](public/images/SignUp.png)
 
 ##  Tech Stack
 
 ###  **Frontend Tech Stack**
 
-#### **Framework
+## **Framework
 - **Next.js (React Framework)**: Modern full-stack framework built on top of React.
 
 #### **Styling & UI**
@@ -69,6 +69,7 @@ Below are some visuals showcasing various sections of the platform:
 - **next/image**: Optimized image rendering in Next.js (`import Image from 'next/image'`).
 
 ---
+
 
 ###  **Summary Table**
 
