@@ -124,9 +124,11 @@ const players = [
 
 export default function PlayerDashboard() {
   const [search, setSearch] = useState("");
+  const [positionFilter, setPositionFilter] = useState("All");
 
   const filteredPlayers = players.filter((player) =>
-    player.name.toLowerCase().includes(search.toLowerCase())
+    player.name.toLowerCase().includes(search.toLowerCase()) &&
+    (positionFilter === "All" || player.position === positionFilter)
   );
 
   const chartData = filteredPlayers.map((player) => ({
@@ -138,15 +140,28 @@ export default function PlayerDashboard() {
 
   return (
     <div className="min-h-screen bg-background text-foreground px-6 py-10">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
         <h1 className="text-3xl font-extrabold tracking-tight">Player Dashboard</h1>
-        <Input
-          type="text"
-          placeholder="Search players..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="max-w-sm bg-white text-black"
-        />
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+          <Input
+            type="text"
+            placeholder="Search players..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="max-w-sm bg-white text-black"
+          />
+          <select
+            value={positionFilter}
+            onChange={(e) => setPositionFilter(e.target.value)}
+            className="bg-white text-black px-3 py-1 rounded shadow"
+          >
+            <option value="All">All</option>
+            <option value="Forward">Forward</option>
+            <option value="Midfielder">Midfielder</option>
+            <option value="Defender">Defender</option>
+            <option value="Goalkeeper">Goalkeeper</option>
+          </select>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
@@ -169,7 +184,7 @@ export default function PlayerDashboard() {
           >
             <Card className="bg-card border border-border cursor-pointer hover:scale-105 transition-transform">
               <CardContent className="flex flex-col items-center p-6">
-                <Avatar className="w-24 h-24 mb-3">
+                <Avatar className="w-32 h-32 mb-3">
                   <img src={player.photo} alt={player.name} className="rounded-full object-cover" />
                 </Avatar>
                 <div className="text-center">
